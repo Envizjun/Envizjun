@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwiTok</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #tweets, #videos {
+      width: 80%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    .tweet, .video {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Welcome to TwiTok</h1>
+    <div id="tweets">
+      <h2>Tweets</h2>
+      <div class="tweet">This is a tweet</div>
+      <!-- Add more tweets dynamically -->
+    </div>
+    <div id="videos">
+      <h2>Videos</h2>
+      <div class="video">This is a video</div>
+      <!-- Add more videos dynamically -->
+    </div>
+  </div>
+
+  <script>
+    // Mock data for tweets and videos
+    const tweetsData = ["Tweet 1", "Tweet 2", "Tweet 3"];
+    const videosData = ["Video 1", "Video 2", "Video 3"];
+
+    // Function to render tweets
+    function renderTweets() {
+      const tweetsContainer = document.getElementById("tweets");
+      tweetsContainer.innerHTML = "<h2>Tweets</h2>";
+
+      tweetsData.forEach(tweet => {
+        const tweetElement = document.createElement("div");
+        tweetElement.className = "tweet";
+        tweetElement.textContent = tweet;
+        tweetsContainer.appendChild(tweetElement);
+      });
+    }
+
+    // Function to render videos
+    function renderVideos() {
+      const videosContainer = document.getElementById("videos");
+      videosContainer.innerHTML = "<h2>Videos</h2>";
+
+      videosData.forEach(video => {
+        const videoElement = document.createElement("div");
+        videoElement.className = "video";
+        videoElement.textContent = video;
+        videosContainer.appendChild(videoElement);
+      });
+    }
+
+    // Initial rendering
+    renderTweets();
+    renderVideos();
+  </script>
+</body>
+</html>
